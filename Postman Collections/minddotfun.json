@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "b558e199-fe3a-4469-83b9-5815d53920ff",
+		"name": "Mint.Fun",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"id": "da712833-9b2e-40c6-ac27-0e94b5a1ad7a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:5218/client/auth/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"id": "95fabfa3-99bf-495e-ab64-c338e010c974",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": ""
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"publicKey\" : \"0x891Aa8AAd1fFC59Ee1dF0FaA\",\r\n    \"privateKey\" : \"0x21382D535E448E5F737Ef7e4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5218/client/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit",
+			"id": "93c2117d-81ae-4ef8-ba5d-352a42b1f9de",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"content-length": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": ""
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5218/client/account/deposit?amount=15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5218",
+					"path": [
+						"client",
+						"account",
+						"deposit"
+					],
+					"query": [
+						{
+							"key": "amount",
+							"value": "15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Withdraw",
+			"id": "e7dffd84-a8e7-4c15-8e9c-18bbb37cb05b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5218/client/account/withdraw?amount=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5218",
+					"path": [
+						"client",
+						"account",
+						"withdraw"
+					],
+					"query": [
+						{
+							"key": "amount",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateName",
+			"id": "2764b4ec-c4c3-4a66-b0e9-779c638238b6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": ""
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5218/client/account/name?name=toni",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5218",
+					"path": [
+						"client",
+						"account",
+						"name"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "toni"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
